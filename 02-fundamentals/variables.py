@@ -36,6 +36,7 @@ print(typ_objektu)
 #? b) identitu objektu (jeho adresu v paměti)
 identita_objektu = id(students_count), id(rating), id(is_published)
 print(identita_objektu)
+print("")
 
 #? Ukažte to na příkladech proměnných students_count, rating, is_published a vypište výstupy do konzole
 
@@ -74,7 +75,7 @@ hexadecimal = 0x12c #Hexadecimal Literal
 #? Vypište do poznámky všechny bitové operátory, které nabízí 
     #<<, >>, &, |, ^, ~
 #? Do proměnné myself_binary uložte binární číslo vytvořené na základě osmi prvních znaků z vašeho jména a příjmení (souhláska = 1, samohláska 0)
-myself_binary = "10100110"
+myself_binary = "10110110"
 print(myself_binary)
 #? Příklad - HildaDok: 10110101
 #? Vypište toto binární číslo v desítkové soustavě
@@ -84,7 +85,10 @@ shifted_binary = int(myself_binary, base=2) >> 2
 print(bin(shifted_binary))
 print(shifted_binary)
 #? Proveďte bitový součin hexadecimálního čísla "1A" a vašeho binárního čísla a opět vypište v desítkové soustavě
+soucin = 0x1A & int(myself_binary, base=2)
+print(soucin)
 #? Výsledek zobrazte jako formátovaný řetězec - např. "Binární součin čísla 0b11010 a 0b10110101 je 0b10000"
+print(f"Binární součin čísla {bin(0x1A)} a 0b{myself_binary} je {bin(soucin)}")
 
 
 '''Python plně podporuje operace v plovoucí řádové čárce (tj. desetinná čísla). 

@@ -158,3 +158,39 @@ funkční kód, tím lepší).
 3. Vytvořte funkci, která vygeneruje náhodná hesla pro počet osob zadaný v parametru tak, aby heslo začínalo
    3 velkými písmeny, pokračovalo 3 malými písmeny, jedním speciálním znakem (-/+*) a končilo 3 náhodnými číslicemi.
 '''
+
+#1.
+datum = input("Zadejte datum ve formátu dd. mm. yyyy: ")
+database_datum = '-'.join(datum.replace('.', '').split()[::-1])
+print(f"Databázový formát: {database_datum}\n")
+
+#2.
+def identifikator(format):
+   veta = input("Zadejte větu: ")
+   slova = veta.lower().split()
+    
+   if format == 'python':
+      return '_'.join(slova)
+   elif format == 'js':
+      return slova[0] + ''.join(word.capitalize() for word in slova[1:])
+   else:
+      return "Neznámý formát"
+
+print(identifikator('python'))
+print(identifikator('js'))
+
+#3.
+import random
+import string
+
+def generace_heslo(count):
+   hesla = []
+   for i in range(count):
+      heslo = ''.join(random.choices(string.ascii_uppercase, k=3))
+      heslo += ''.join(random.choices(string.ascii_lowercase, k=3))
+      heslo += random.choice('-+*')
+      heslo += ''.join(random.choices(string.digits, k=3))
+      hesla.append(heslo)
+   return hesla
+
+print(generace_heslo(5))
