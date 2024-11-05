@@ -290,7 +290,12 @@ print(f'\n*************************************\nCvičení 2\n******************
 
 # ??? 3. cvičení ???
 # a) Přidejte do listu persons ještě n-tice (tuples) dalších 2 žen a 2 mužů.
+persons.extend([('Jitka', 30, 'žena'), ('Pavel', 35, 'muž'), ('Ivana', 25, 'žena'), ('Petr', 45, 'muž')])
+print(persons)
+print(f'\n')
 # b) Použijte seznam (list) persons a do proměnné women z něj pomocí lambda výrazu i comprehensions vyhledejte všechny ženy.
+women = list(filter(lambda item: item[2] == 'žena', persons))
+print(women)
 # Seznam jmen žen poté vypište na samostatné řádky. Každý vypsaný řádek bude podtržen pomlčkami přesně podle délky jména.
 # c) Použijte seznam (list) persons a do proměnné ipeople z něj pomocí lambda výrazu i comprehensions vyhledejte všechny osoby
 # obsahující ve jméně písmeno "i". Obsah listu ipeople poté převeďte do podoby řetězce, který bude odpovídat struktuře csv souboru.
