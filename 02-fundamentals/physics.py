@@ -6,10 +6,28 @@ V Pythonu jsou konstanty obvykle deklarovány a přiřazovány v modulu, který 
 Konstanty jsou pojmenovány velkými písmeny a jednotlivá slova jsou oddělována podtržítky.
 '''
 
-EARTH_GRAVITY = 0 #? normální pozemské tíhové zrychlení
-MOON_GRAVITY = 0 #? měsíční gravitace
-SPEED_OF_LIGHT = 0 #? rychlost světla ve vakuu
-SPEED_OF_SOUND = 0 #? rychlost zvuku při teplotě 20 °C v suchém vzduchu
+EARTH_GRAVITY = 9.81         # m/s^2, normální pozemské tíhové zrychlení
+MOON_GRAVITY = 1.62          # m/s^2, měsíční gravitace
+SPEED_OF_LIGHT = 299792458   # m/s, rychlost světla ve vakuu
+SPEED_OF_SOUND = 343         # m/s, rychlost zvuku při teplotě 20 °C v suchém vzduchu
+
+# Výpočtové funkce
+def weight_on_planet(mass, gravity):
+    """Vypočítá váhu objektu o dané hmotnosti na tělese s danou gravitací."""
+    return mass * gravity
+
+def energy_from_mass(mass):
+    """Vypočítá energii objektu na základě jeho hmotnosti podle E = mc^2."""
+    return mass * SPEED_OF_LIGHT ** 2
+
+def travel_time_sound(distance):
+    """Vypočítá čas potřebný k překonání vzdálenosti zvukem ve vzduchu při 20 °C."""
+    return distance / SPEED_OF_SOUND
+
+def travel_time_light(distance):
+    """Vypočítá čas potřebný k překonání vzdálenosti světlem ve vakuu."""
+    return distance / SPEED_OF_LIGHT
+
 
 ''' 
 Úkol:
